@@ -1,0 +1,527 @@
+.Imagehome {
+    height: 100%;
+    width: 100%;
+    height: auto;
+    border: solid black;
+    display: block;
+    margin: auto;
+    border-collapse: collapse;
+    border: solid black 3px;
+}
+
+#image{
+    /* display: flex; */
+    align-items: center;
+    padding-top: auto;
+    height: 40%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.zoomhome{
+    transition: transform .2s;
+}
+
+.zoomhome:hover{
+    transform: scale(1.1);
+}
+
+
+
+
+@media screen and (max-width: 780px) {
+    #image{
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+    #textdropdown{
+        /* font-size: 2em; */
+        text-align: center;
+        color: white;
+    }
+    .zoom:hover{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    #image{
+        grid-template-columns: 1fr 1fr;
+    }
+    .zoom:hover{
+        transform: none;
+    }
+    
+}
+
+@font-face {
+    font-family: Vogue;
+    src: url(Vogue.ttf) format('Truetype');
+}
+
+body {
+    font-family: Vogue, serif;
+    margin: auto;
+    
+
+}
+ section, article{
+    background-image: url(images/);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+html {
+    background-color: #689e99;
+}
+
+/* making the elements in nav go to the right */
+nav {
+    position: relative;
+    /* background-color: black; */
+    font-weight: 600;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+/* making border of the menu */
+nav a {
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+a:hover {
+    opacity: 0.3;
+    transform: translateY(-5px);
+}
+
+#Logo {
+    position: absolute;
+    float: left;
+    margin-top: auto;
+    margin-left: 2px;
+}
+
+
+
+/* code below is for making text dropdown and making it center , only if its bigger than 768px */
+@media screen and (min-width: 768px) {
+    #textdropdown {
+        animation: fadeinanimation ease 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        font-size: 10em;
+        color: white;
+        text-align: center;
+        margin-top: 0%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 4;
+        /*code used from here https://www.w3schools.com/css/css3_2dtransforms.asp*/
+    }
+    .zoomhome{
+        transition: transform .2s;
+        position: relative;
+        z-index: 1;
+    }
+    .zoomhome:hover{
+        transform: scale(1.1);
+        z-index: 2;
+    }
+
+    #textdropdown2 {
+        text-align: center;
+        color: white;
+        font-size: 5em;
+        margin-bottom: auto;
+        z-index: 4;
+        position: relative;
+        /* z-index stuff leant from here https://developer.mozilla.org/en-US/docs/Web/CSS/z-index in order to make text appear ontop of zoomed images */
+    }
+
+    @keyframes fadeinanimation {
+        0% {
+            opacity: 0;
+            margin-top: 0;
+        }
+
+        100% {
+            margin-top: 10%;
+            opacity: 1;
+        }
+    }
+}
+
+h1,p,h3,figcaption,ul{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 0.8px;
+}
+#Credits li {
+    text-shadow: none;
+}
+figcaption{
+    text-align: center;
+}
+h1,h3,h2{
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+p, h3,small,li,ul{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+}
+footer small{
+    color: white;
+    font-size: 1em;
+    padding:4px;
+    display: flex;
+    text-decoration: underline;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.foodleft{
+    border: white 5px solid;
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #3ca39c;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-image: url(images/image-from-rawpixel-id-6818736-original.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
+.foodright{
+    border: white 5px solid;
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    justify-content: end;
+    margin-bottom: 10px;
+    background-color: #7a8450;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-image: url(images/image-from-rawpixel-id-6818736-original.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
+.foodimages{
+    flex:2
+}
+
+.foodimages img{
+    box-shadow: 10px 10px 20px rgba(123, 123, 123, 0.5)
+}
+
+/* got this from https://developer.mozilla.org/en-US/docs/Web/CSS/flex  */
+.text{
+    flex: 3;
+}
+
+.HalwaP, .ChickenK{
+    width:100%;
+    height: auto;
+}
+
+.food-description{
+    color: white;
+    text-align: center;
+}
+.foodimages img{
+    box-shadow: 10px 10px 20px rgba(123, 123, 123, 0.5)
+}
+/* .zoomfood{
+    transition:transform .2s;
+}
+
+.zoomfood:hover{
+    transform: scale(1.1);
+} */
+
+@media screen and (max-width: 786px) {
+    .foodleft{
+        flex-direction: column;
+        margin: 10px;
+        background-image: none;
+    }
+
+    .foodimages{
+        display: flex;
+        justify-content: center;
+    }
+
+    .foodright{
+        flex-direction: column-reverse;
+        margin: 10px;
+        background-image: none;
+    }
+    main section nav{
+        display: flex;
+        justify-content: center;
+    }
+
+    main section nav a{
+        margin: 0 5px;
+    }
+    
+} 
+
+@media screen and (max-width: 400px) {
+    main section nav{
+        display: grid;
+        grid-template-columns: 100px 100px;
+        column-gap: 20px;
+        row-gap: 10px;
+    }
+
+    main section nav a{
+        margin: 0 1px
+    }
+}
+
+.Info img{
+    width: 20%;
+    height: auto;
+    margin-top: 3%;
+    
+
+}
+
+.Info h1{
+    border:2px white;
+    align-items: center;
+    background-color: black;
+    display: block;
+    text-align: center;
+    margin-top: 5%;
+    padding:2%;
+    font-size: 2em;
+
+}
+
+.Info{
+    border: 2px solid white;
+    background-color: slategrey;
+    border-radius: 25px;
+    text-align: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+
+.Poem-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    
+}
+
+.Poems{
+    border: 2px solid white;
+    /* margin-left: 2em; */
+    margin: 10px;
+    background-color: #7a8450;
+    color: #689e99;
+    border-radius: 20px;
+
+}
+
+#Sun{
+    background-image: url(images/sun.jpg);
+    background-repeat: no-repeat;
+    background-attachment: Fixed;
+    background-size: cover;
+}
+
+#Moon{
+    background-image: url(images/moon123.jpg);
+    background-repeat: no-repeat;
+    background-attachment: Fixed;
+    background-size: cover;
+}
+
+ul, li{
+    text-align: left;
+    color: white;
+}
+
+@media screen and (max-width: 550px) {
+.Poem-content{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+}
+
+
+.main{
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
+
+.about-me{
+    background-color: rgb(90, 90, 90);
+    margin-top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.author-name{
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.image img{
+    height:100%;
+    width: 100%;
+}
+.about-me-biography{
+    margin-left: 18px;
+    margin-right: 18px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.my-favourites{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.main-content{
+    display: block;
+    min-height: 200px;
+    margin-right: 5px;
+}
+
+.image-content{
+    height: 120px;
+    background-color: white;
+    min-width: 200px;
+    max-width: 200px;
+    margin-left: 20px;
+    margin-right: 10px;
+    float: left;
+    
+}
+
+
+.image-content img{
+    width:200px;
+    height:130px;
+    box-shadow: 2px 2px 4px #000000;
+
+}
+.content-description{
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-top: 12px;
+}
+
+#footer{
+    display: none;
+}
+
+@media screen and (max-width: 670px) {
+    .main{
+        display:unset;
+    } 
+
+    .about-me{
+        display: none;
+    }
+    .main-1{
+        margin-left: 10px;
+    }
+
+    #footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(77, 77, 77);
+        padding-bottom: 10px;
+        bottom: 0;
+    }
+
+    .footer-about-me{
+        margin-bottom: 0px;
+    }
+
+    .footer-author{
+        margin-bottom: 0;
+    }
+
+    .footer-text{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+
+@media screen and (max-width: 410px) {
+    .main-content{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        border: 5px solid white;
+        align-items: center;
+    }
+
+    .content-description{
+        text-align: center;
+    }
+    .zoom{
+        /* padding-top: 20px; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+}
+
+footer  a{
+    position: relative;
+
+}
+
+.zoom {
+    transition: transform .2s;
+    width:fit-content;
+    height: fit-content;
+
+  }
+  
+.zoom:hover {
+    transform: scale(1.03);
+}
